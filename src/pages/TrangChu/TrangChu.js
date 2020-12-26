@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect, useSelector, useDispatch } from 'react-redux'
 import Axios from 'axios'
 import { getDataFilmaction } from '../../redux/actions/QuanLiPhimAction';
+import { NavLink } from 'react-router-dom';
 export default function TrangChu(props) {
     //useSelector la hook reactredux cung cap dung de lay state tu store ve
     const mangPhim = useSelector(state => state.QuanLiPhimReducer.mangPhim);
@@ -34,6 +35,9 @@ export default function TrangChu(props) {
                     <div className="card-body">
                         <h4 className="card-title">{phim.tenPhim}</h4>
                         <p className="card-text">{phim.moTa}</p>
+                        <NavLink to={`/chitietphim/${phim.maPhim}`}className="btn btn-danger">
+                            Mua Ve
+                        </NavLink>
                     </div>
                 </div>
 
