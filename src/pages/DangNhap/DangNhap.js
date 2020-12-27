@@ -4,7 +4,7 @@ import { dangNhapAction } from '../../redux/actions/QuanLiNguoiDungAction';
 
 
 
-export default function DangNhap() {
+export default function DangNhap(props) {
     //useDispatch la hook do react redux cung cap tuong tu props.dispatch khi su dung connect 
     const dispatch = useDispatch()
     //useState la thu vien thay the this.state trong RE class component
@@ -26,7 +26,12 @@ export default function DangNhap() {
     const handleSubmit = (e) => {
         e.preventDefault();//can su kien submit cua browser (reload page)
         //Goi api de xac thuc dang nhap
-        dispatch(dangNhapAction(state));
+        dispatch(dangNhapAction(state,props));
+        // Dung : chuyen huong ve trang chu
+        // Push: Chuyen huong trang co the backpage lai duoc 
+        // Replace : Thay the trang hien tai bang trang khac
+        // props.history.push('/trangchu')
+        //Sai : o lai vi tri cu
     }
     return (
         <form className="container" onSubmit={handleSubmit}>

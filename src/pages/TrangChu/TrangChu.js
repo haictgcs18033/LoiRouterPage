@@ -4,6 +4,7 @@ import Axios from 'axios'
 import { getDataFilmaction } from '../../redux/actions/QuanLiPhimAction';
 import { NavLink } from 'react-router-dom';
 export default function TrangChu(props) {
+    console.log('propsRoute',props);
     //useSelector la hook reactredux cung cap dung de lay state tu store ve
     const mangPhim = useSelector(state => state.QuanLiPhimReducer.mangPhim);
     //useDispatch la hook thay the cho props.dispatch khi dung redux connect
